@@ -1,222 +1,36 @@
-AI Voice Agents Challenge – Starter Repository
+# Day 6 - Fraud Alert Voice Agent
 
+**AI Voice Agents Challenge by [murf.ai](https://murf.ai)**
 
+A professional fraud detection voice agent for SecureBank that verifies suspicious transactions through voice calls.
 
+## Quick Start
 
+**Terminal 1:** `cd livekit && livekit-server.exe --dev`  
+**Terminal 2:** `cd backend && uv run python src/agent.py dev`  
+**Terminal 3:** `cd frontend && pnpm dev`  
+**Terminal 4:** `cd backend && python web_db.py`
 
+## Test
 
+1. Open **http://localhost:3000** (Frontend)
+2. Open **http://localhost:5000** (Database Viewer)
+3. Click "Connect" 
+4. Say card number: **4242**, **8765**, or **1234**
+5. Answer security question
+6. Confirm/deny transaction
+7. Watch live updates at http://localhost:5000
 
+## Test Cases
 
+- **Card 4242** → John Smith (Answer: "Johnson")
+- **Card 8765** → Sarah Wilson (Answer: "Chicago") 
+- **Card 1234** → Mike Johnson (Answer: "Buddy")
 
+## Database
 
+SQLite database (`fraud_cases.db`) updates in real-time. Watch backend terminal for live changes.
 
+---
 
-Welcome to the AI Voice Agents Challenge by murf.ai
-.
-This repository is the official starter kit for building 10 real-time AI Voice Agents in 10 days, using LiveKit Agents and Murf Falcon TTS.
-
-About the Challenge
-
-Build a new AI voice agent every day for 10 days.
-Each day brings a task designed to help you build, optimize, and deploy real-time AI-powered conversational agents.
-
-How It Works
-
-One new task is released daily
-
-Implement the task using this monorepo
-
-Push to GitHub
-
-Share your progress on LinkedIn
-
-Learn alongside the community and Murf developers
-
-Repository Structure
-falcon-tdova-nov25-livekit/
-├── backend/          # LiveKit Agents backend with Murf Falcon TTS
-├── frontend/         # React/Next.js frontend for the voice UI
-├── start_app.sh      # Script to start all services together
-└── README.md         # Documentation
-
-Backend Overview
-
-Based on the official
-https://github.com/livekit-examples/agent-starter-python
-
-Features
-
-LiveKit Agents backend
-
-Murf Falcon streaming TTS
-
-Deepgram STT
-
-Google Gemini support
-
-Turn detection
-
-Noise cancellation
-
-Logging and metrics
-
-Test suite
-
-Dockerfile included
-
-More info: backend/README.md
-
-Frontend Overview
-
-Based on:
-https://github.com/livekit-examples/agent-starter-react
-
-Features
-
-Real-time voice UI
-
-Screen share + camera support
-
-Audio level visualization
-
-Light/dark themes
-
-Customizable interface
-
-More info: frontend/README.md
-
-Quick Start
-Prerequisites
-
-Install:
-
-Python 3.9+ (uv)
-
-Node.js 18+ (pnpm)
-
-LiveKit Server
-
-LiveKit CLI (optional)
-
-1. Clone the Repository
-git clone <your-repo-url>
-cd falcon-tdova-nov25-livekit
-
-2. Backend Setup
-cd backend
-uv sync
-cp .env.example .env.local
-
-
-Fill in:
-
-LIVEKIT_URL
-
-LIVEKIT_API_KEY
-
-LIVEKIT_API_SECRET
-
-MURF_API_KEY
-
-DEEPGRAM_API_KEY
-
-GOOGLE_API_KEY
-
-Download models:
-
-uv run python src/agent.py download-files
-
-
-Optional (LiveKit Cloud):
-
-lk cloud auth
-lk app env -w -d .env.local
-
-3. Frontend Setup
-cd frontend
-pnpm install
-cp .env.example .env.local
-
-
-Use the same LiveKit credentials.
-
-4. Running the Application
-Option A: Run everything
-chmod +x start_app.sh
-./start_app.sh
-
-
-Starts:
-
-LiveKit Server
-
-Backend
-
-Frontend
-
-Option B: Run manually
-# Terminal 1
-livekit-server --dev
-
-# Terminal 2
-cd backend
-uv run python src/agent.py dev
-
-# Terminal 3
-cd frontend
-pnpm dev
-
-
-Open:
-http://localhost:3000
-
-Daily Challenge Tasks
-
-Across 10 days you will:
-
-Build custom personas
-
-Handle multi-turn conversation
-
-Integrate custom tools
-
-Build customer service, tutoring, and domain-specific agents
-
-Improve latency and UX
-
-Deploy polished voice AI experiences
-
-Tasks will be listed here.
-
-Documentation and Resources
-
-Murf Falcon TTS Docs: https://murf.ai/api/docs/text-to-speech/streaming
-
-LiveKit Agents Docs: https://docs.livekit.io/agents
-
-React Starter Template: https://github.com/livekit-examples/agent-starter-react
-
-Python Starter Template: https://github.com/livekit-examples/agent-starter-python
-
-Testing
-cd backend
-uv run pytest
-
-
-More info:
-https://docs.livekit.io/agents/build/testing/
-
-Community
-
-Join LiveKit Slack
-
-Share daily progress
-
-Connect with other participants
-
-Open issues or pull requests if needed
-
-License
-
-This project includes MIT-licensed code from LiveKit.
-See LICENSE files in backend and frontend.
+**Day 6 Complete!** Built with LiveKit Agents + Murf Falcon TTS
